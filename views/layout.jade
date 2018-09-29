@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#header
+    div#container!= body
+    div#footer
+        div A blog creator
+        div
+          - if (user)
+            a(href="/logout") Logout #{user.user}
+            span |
+            a(href="/post/add") Add post
+          - else 
+            a(href="/login") Login
